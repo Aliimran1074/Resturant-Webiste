@@ -1,0 +1,17 @@
+#topImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+}
+#googleIcon{
+    /* border:  solid black; */
+    border: 2px solid black;
+    /* border-radius: 0%; */
+    /* float:right; */
+} 
+.orange-icon{
+    color: blue;
+}
+#eyeIcons{
+    float: right;
+}

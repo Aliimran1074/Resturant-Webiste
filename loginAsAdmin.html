@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login As Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="signUpAsCustomer.css">
+</head>
+
+<body>
+
+    <div class="col-md-12">
+        <img id="topImage" src="https://wallcastle.com/wp-content/uploads/2023/04/6_Mockup.jpg"
+            alt="Top Image">
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <span class=" span btn btn-md btn-primary" id="navToAdmin">Login As Admin</span>
+                    </div>
+                    <div class="col-6 text-end">
+                        <span class="span btn btn-sm btn-outline-dark" id="navToCustomer">Login As Customer</span>
+                    </div>
+                </div>
+            </div>
+            <form action="">
+                <div class="mt-4">
+                    <label for="exampleFormControlInput1" class="form-label text-primary">Email address</label>
+                    <input type="email" class="form-control" id="adminEmail" placeholder="Enter Email">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-primary">Password</label>
+                    <input type="password" id="adminPassword" class="form-control" placeholder="Enter Password">
+
+                    <button id="eyeIcons"><i class="fa fa-eye-slash" aria-hidden="true" id="closeEye"
+                            style="display: none;"></i> <i class="fa-solid fa-eye icon" id="openEye"></i></button>
+
+                </div>
+
+                <br> <br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-success fs-5" id="submitBtn" type="button">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="loginNavigation.js"></script>
+</body>
+
+</html>

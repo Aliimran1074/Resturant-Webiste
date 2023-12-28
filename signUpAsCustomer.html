@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up As Customer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="signUpAsCustomer.css">
+</head>
+
+<body>
+
+    <div class="col-md-12">
+        <img id="topImage" src="https://wallpaperaccess.com/full/3014596.jpg"
+            alt="Top Image">
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <form action="">
+                <div class="mt-4">
+                    <label for="exampleFormControlInput1" class="form-label text-primary">Name</label>
+                    <input type="text" class="form-control" id="customerName"
+                        placeholder="Enter Name">
+                </div>
+               
+                <div class="mt-4">
+                    <label for="exampleFormControlInput1" class="form-label text-primary">Email address</label>
+                    <input type="email" class="form-control" id="customerEmail"
+                        placeholder="Enter Email">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-primary">Password</label>
+                    <input type="password" id="customerPassword" class="form-control" 
+                        placeholder="Enter Password">
+                    <span>Forgot Password</span>
+                    <button id="eyeIcons"><i class="fa fa-eye-slash" aria-hidden="true" id="closeEye"
+                            style="display: none;"></i> <i class="fa-solid fa-eye icon" id="openEye"></i></button>
+
+                </div>
+                <div class="mt-3">
+                    <b > <a href="./loginAsCustomer.html" style="color: black;"><p>Already have an account</p></a></b>
+                 </div>                
+                 
+                
+               
+                
+                <br>    <br>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" id="submitBtn" type="button">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="navigation.js"></script>
+</body>
+
+</html>

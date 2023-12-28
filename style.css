@@ -1,0 +1,21 @@
+.anchor{
+    text-decoration: none;
+    color: black;
+}
+.span{
+/* border: 2px solid black; */
+border-top: 2px solid black;
+border-left: 2px solid black;
+border-right: 2px solid black;
+border-radius:5px;
+}
+.eyeIconBtn{
+margin:auto;
+cursor: pointer;
+}
+#topImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+}
+

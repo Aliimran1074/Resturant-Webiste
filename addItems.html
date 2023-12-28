@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
+  <title>Add Items</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./adminDashBoard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fs-4 text-success" aria-current="page" href="./addItems.html">Add
+                            Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./order.html">Check Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="./update.html">Update Email/Password</a>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<br><br>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center">
+        <form class="w-50">
+            <h1 class="text-success">   <u>  ADD DETAILS </u></h1><br>
+            <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark">Item Name</label>
+                <div class="input-group input-group-lg ">
+                    <input type="text" id="itemName" class="form-control fs-6" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" required placeholder="Enter Item Name ">
+                </div>
+            </div>
+            <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark" >Item Price</label>
+                <div class="input-group input-group-lg ">
+                    <input id="itemPrice" type="number" class="form-control fs-6" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-md" required placeholder=" Enter Item Price ">
+                </div>
+            </div>
+            
+            <!-- <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark" >Category</label>
+                <div class="input-group input-group-lg ">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">Chunck Food</option>
+                        <option value="2">Spicy Food</option>
+                        <option value="3">Chinese Food</option>
+                      </select>
+                </div>
+            </div> -->
+
+            <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark">Item Discription</label>
+                <div class="input-group input-group-lg ">
+                    <textarea id="itemDiscription" class="form-control fs-6" name="" id="" cols="80" rows="0" placeholder=" Enter Discription "></textarea>
+                </div>
+            </div>
+            
+            <label for="basic-url" class="form-label fs-5 text-dark">Upload Pic Here</label>
+            <div class="input-group mb-3">
+                <input type="file" id="uploadPic" class="form-control" id="inputGroupFile02">
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+              </div><br>
+              <div class="d-grid gap-2">
+              <button class="btn btn-outline-primary" type="button" id="addButton">Add Item</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

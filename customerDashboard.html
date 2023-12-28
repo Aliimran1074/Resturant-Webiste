@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+        <a class="navbar-brand" href="#">
+            <img class="image" src="https://marketplace.canva.com/EAFf_wSVnww/1/0/1600w/canva-red-illustrated-mascot-chef-free-logo-OF2DyCFvPEM.jpg" width="60" height="50" alt="">
+        </a>
+        <div class="d-flex align-items-center">
+           <!-- Search input -->
+<form class="form-inline">
+    <div class="input-group">
+        <input class="form-control ml-2" id="searchField" type="search" placeholder="Search by item Name" aria-label="Search">
+        <div class="input-group-append mt-2 mt-md-0">
+            <button  class="input-group-text btn btn-md mt-3" id="searchIcon"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: white;"></i></button>
+        </div>
+    </div>
+</form>
+        </div>
+        <!-- Shopping cart icon and count with added margin -->
+        <div class="ms-auto d-flex align-items-center">
+            <span class="icon d-flex justify-content-center align-items-center">
+                <button class="iconBtn btn btn-lg "><a href="./cart.html"><i class="fa-solid fa-lg fa-cart-shopping"></i> </a>:</button><span class="fs-5 ml-3 number" id="count">0</span>
+            </span>
+        </div>
+    </nav>
+<br><br><br><br><br><br>
+<!-- image div -->
+<div class="container mt-4">
+    <div class="text-center">
+        <img src="https://www.shutterstock.com/image-photo/dum-handi-chicken-biryani-prepared-600nw-2000023562.jpg" class="rounded img-fluid" alt="" id="image">
+    </div>
+</div>
+<div class="container mt-5">
+    <h1 class="text-center">Available Items</h1>
+    <div class="selectorDiv" style="float: right;">
+        <select name="" id="selector" style="font-size: medium;">
+            <option selected value="1">Select to Price Sort </option>
+            <option  value="2">Sort (Higher Price to Lower) </option>
+          <option value="3">Sort (Lower Price to Higher) </option>   
+        </select>
+        </div>
+        <br>
+    <div id="divRow" class="row">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+<script type="module" src="customer.js"></script>
+</body>
+</html>

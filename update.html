@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active fs-4 text-success" aria-current="page" href="./adminDashBoard.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-4" href="./addItems.html">Add Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4" href="./order.html">Check Order</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fs-4" href="./update.html">Update Email/Password</a>
+                  </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search Item" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>  
+
+<br><br>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center">
+        <form class="w-50">
+            <h1 class="text-success">   <u>  Update Password </u></h1><br>
+            <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark">Enter  Email</label>
+                <div class="input-group input-group-lg ">
+                    <input type="email" id="email" class="form-control fs-6" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" required placeholder="Enter  Email">
+                </div>
+            </div>
+            <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark" >Enter Old Password</label>
+                <div class="input-group input-group-lg ">
+                    <input id="oldPassword" type="password" class="form-control fs-6" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-md" required placeholder=" Enter Old Password ">
+                </div>
+            </div>
+
+            <div class="input-group mb-3 ">
+                <label for="basic-url" class="form-label fs-5 text-dark" >Enter New Password</label>
+                <div class="input-group input-group-lg ">
+                    <input id="newPassword" type="password" class="form-control fs-6" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-md" required placeholder=" Enter New Password ">
+                </div>
+            </div>
+            
+            
+              <div class="d-grid gap-2">
+              <button class="btn btn-outline-success" type="button" id="updateButton">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
