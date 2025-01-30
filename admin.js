@@ -9,7 +9,6 @@ const auth = getAuth(app)
 const user = auth.currentUser;
 
 if (document.title === 'Add Items') {
-
   onAuthStateChanged(auth, async(user) => {   //check current user is admin or not
     if (user) {
       const uid = user.uid;
@@ -58,20 +57,21 @@ else{
     }
     else {
       try {
-        // console.log("File Name :" + picUpload.files[0].name)
+        console.log("File Name :" + picUpload.files[0].name)
+        console.log('Pic Upload:',picUpload)
         let storageRef = ref(storage, `images/${picUpload.files[0].name}`)
         const uploadTask = uploadBytesResumable(storageRef, picUpload.files[0])
+        console.log("Upload Task is Working :",uploadTask)
         uploadTask.on('state_changed',
           (snapshot) => {
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             console.log('Upload is ' + Math.round(progress) + '% done')
-
             if (progress < 100) {
               let timerInterval
               Swal.fire({
                 title: "Uploading..",
                 html: `${Math.round(progress)}% done`,
-                timer: 10000,
+                timer: 50000,
                 timerProgressBar: true,
                 background: 'black',
                 color: 'white',
@@ -82,13 +82,16 @@ else{
                   clearInterval(timerInterval);
                 }
               }).then((result) => {
+                console.log('Reason:',result)
                 if (result.dismiss === Swal.DismissReason.timer) {
                   console.log("I was closed by the timer");
                 }
               });
+            console.log('Progess:',progress)
             }
 
-            else if (progress == 100) {
+            else if (progress === 100) {
+              console.log('Progress 100%',progress)
               Swal.fire({
                 title: "Added  Successfully",
                 icon: "success",
@@ -105,13 +108,19 @@ else{
                 console.log('Upload is running')
                 break
             }
+            console.log('Upload Task:',uploadTask)
+            console.log('Upload Task Snapshot:',uploadTask.snapshot.ref)
           },
           (error) => {
-            console.log(error)
+            console.log('Error in adding Image :',error)
+
           },
           () => {
+            console.log("Entering in getDownload Url Phase")
+            // getDownloadURL(uploadTask.snapshot.ref.path)
             getDownloadURL(uploadTask.snapshot.ref)
               .then((downloadURL) => {
+                console.log('Download Url is Running')
                 imageUrl = downloadURL
                 console.log('File available at', imageUrl)
 
@@ -120,10 +129,13 @@ else{
               })
               .catch((error) => {
                 console.log(error)
+                console.log('Error in downloading Url',error)
               })
           }
         )
-      } catch (e) {
+      } catch (error) {
+
+        console.log("Error in last",error)
         Swal.fire({
           icon: "warning",
           title: "Please upload picture also",
@@ -134,6 +146,7 @@ else{
     }
     async function addDataToFirestore() {
       try {
+        console.log('Add Data to Firestore is running')
         const docRef = await addDoc(collection(dataBase, "data/"), {
           itemName: itemName.value,
           itemPrice: itemPrice.value,
@@ -146,10 +159,10 @@ else{
       } catch (e) {
         console.log("Error adding document: ", e.message)
       }
-      itemName.value = ''
-      itemPrice.value = ''
-      itemDiscription.value = ''
-      picUpload.value = ''
+      // itemName.value = ''
+      // itemPrice.value = ''
+      // itemDiscription.value = ''
+      // picUpload.value = ''
     }
   }
 

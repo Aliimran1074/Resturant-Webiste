@@ -120,7 +120,7 @@ else if(document.title=='Login As Customer'){
     })
 
     loginNav.addEventListener('click', () => {    //navigate to admin login page
-        alert('Login as Admin')
+        // alert('Login as Admin')
         window.location.href = './loginAsAdmin.html'
     })
     submitButton.addEventListener('click', () => {            
@@ -175,14 +175,12 @@ Swal.fire({
             console.log('Yes')
             signInWithPopup(auth, provider)
       .then(async (result) => {
-    
         const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
         const user = result.user;
         console.log(user)
         console.log(user.displayName)
         console.log(user.email)
-       
-             
              try {
                 const docRef = await addDoc(collection(dataBase, "customerSignUp"), {   //data save in database
                   email: user.email,
@@ -190,7 +188,8 @@ Swal.fire({
                   id:user.uid
                 })
                 console.log("Document written with ID: ", docRef.id);
-              } catch (e) {
+              } 
+              catch (e) {
                 console.error("Error adding document: ", e)
               }
     
@@ -198,7 +197,7 @@ Swal.fire({
         }
        
       ).catch((error) => {
-        
+        console.log(error)
         const errorMessage = error.message;
         console.log(errorMessage)
         // The email of the user's account used.
@@ -207,15 +206,15 @@ Swal.fire({
           });
 
 
-        console.log('Thank you')                      
+        // console.log('Thank you')                      
         }        
 
-let googleIcon = document.querySelector('#googleIcon');
-    googleIcon.addEventListener('click', (event) => {
+// let googleIcon = document.querySelector('#googleIcon');
+//     googleIcon.addEventListener('click', (event) => {
     
-    // console.log('Welcome')  
-    signUpWithGoogle()
-    })
+//     // console.log('Welcome')  
+//     signUpWithGoogle()
+//     })
     
 
     

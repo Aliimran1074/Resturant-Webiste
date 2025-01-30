@@ -1,4 +1,6 @@
+// import {scale} from '@cloudinary/transformation-builder-sdk/actions/resize';
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
 
   const firebaseConfig = {
     apiKey: "AIzaSyDruOFpxfBKpCAQ47cC_ZaqsFQValoU4_o",
@@ -14,3 +16,17 @@
   const app = initializeApp(firebaseConfig);
 
   export {app}
+
+
+// SDK initialization
+// import {ImageKit} from '"https://unpkg.com/imagekit-javascript/dist/imagekit.min.js"'  
+// var imagekit = new ImageKit({
+//   publicKey : "public_vo9VEBZ/LCEMQL63MxkyyAlB4I4=",
+//   urlEndpoint : "https://ik.imagekit.io/8njb44qmr",
+//   authenticationEndpoint : "http://www.yourserver.com/auth",
+// });
+
+// export {imagekit}
+// URL generation
+
+  

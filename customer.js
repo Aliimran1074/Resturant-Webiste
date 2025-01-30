@@ -126,9 +126,6 @@ if (document.title == 'Customer Dashboard') {
     </div>`
                     }
                 }
-
-
-                // 50 >40
  //bubble sort                
                 if (selector.selectedIndex == 2) {
                                 for (let i = 0; i < newArray.length; i++) {

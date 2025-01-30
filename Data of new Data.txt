@@ -1,0 +1,148 @@
+         let getData = () => {
+                onSnapshot(collection(dataBase, "data"), async (data) => {
+                    dataArray = [] //to avoid looping
+                    // console.log(data)
+                    let dataGetter=data.docChanges()
+                    // console.log(dataGetter)
+                    dataArray.push(dataGetter)
+                        // console.log(dataArray)
+                    // for(let i=0;i<dataGetter.length;i++){
+                    //     console.log(i +dataGetter[i].doc.id )
+                    // }
+
+//                     // for(let i=0;i<data.docChanges().length;i++){
+
+                    
+                    dataGetter.forEach((newData) => {
+                        let docId = data.docChanges[i].doc.id;
+                        console.log(newData.type);
+                        console.log(newData)
+                        // dataArray.push(newData.doc);
+                        // console.log(dataArray)
+//  console.log(dataArray[i])
+
+
+
+
+                        if (newData.type === 'added') {
+                        //    selector.selectedIndex=0
+                    //        rowDiv.innerHTML += `<div class="col-md-4 mt-4" id="${newData.doc.id}">
+                    //        <div class="card" style="width: 18rem;">
+                    //            <img src="${newData.doc.data().imageUrl}" class="card-img-top" width='100px' height='200px' alt="abc">
+                    //            <div class="card-body">
+                    //                <h5 class="card-title">${newData.doc.data().itemName}</h5>
+                    //                <h3 class="card-title">Price: <span class="card-price">${newData.doc.data().itemPrice}</span></h3>
+                    //                <p class="card-text">${newData.doc.data().itemDiscription}.</p>
+                    //                <button class="btn btn-lg btn-outline-primary" onclick="addToCart(this,'${newData.doc.id}')">Add to Cart</button>
+                    //            </div>
+                    //        </div>
+                    //    </div>`
+                           // return copyOfArray
+                        }
+
+                        if(selector.selectedIndex===1 ||selector.selectedIndex===2){
+                            if (selector.selectedIndex === 2) {
+                                for (let i = 0; i < dataArray.length; i++) {
+                                    for (let j = 0; j < dataArray.length - i - 1; j++) {
+                                        if (Number(dataArray[j].data().itemPrice) > Number(dataArray[j + 1].data().itemPrice)) {
+                                            [dataArray[j], dataArray[j + 1]] = [dataArray[j + 1], dataArray[j]];
+                                        }
+                                    }
+                                }
+                                copyOfArray = dataArray.slice()
+                                // console.log(copyOfArray)
+                                // return copyOfArray
+                            }
+                            else if (selector.selectedIndex === 1) {
+                                for (let i = 0; i < dataArray.length; i++) {
+                                    for (let j = 0; j < dataArray.length - i - 1; j++) {
+                                        if (Number(dataArray[j].data().itemPrice) < Number(dataArray[j + 1].data().itemPrice)) {
+                                            [dataArray[j], dataArray[j + 1]] = [dataArray[j + 1], dataArray[j]];
+                                        }
+                                    }
+                                }
+                                copyOfArray = dataArray.slice()
+                                // console.log(copyOfArray)
+
+                                // for(let j=0;j<dataArray.length;j++){
+                                //     console.log(dataArray[j].data().itemPrice)
+                                // }
+                            }
+                            // rowDiv.innerHTML = ""
+
+                            for (let i = 0; i < dataArray.length; i++) {
+                                rowDiv.innerHTML += `<div class="col-md-4 mt-4" id="${dataArray[i].id}">
+                    <div class="card" style="width: 18rem;">
+                        <img src="${dataArray[i].data().imageUrl}" class="card-img-top" width='100px' height='200px' alt="abc">
+                        <div class="card-body">
+                            <h5 class="card-title">${dataArray[i].data().itemName}</h5>
+                            <h3 class="card-title">Price: <span class="card-price">${dataArray[i].data().itemPrice}</span></h3>
+                            <p class="card-text">${dataArray[i].data().itemDiscription}.</p>
+                            <button class="btn btn-lg btn-outline-primary" onclick="addToCart(this,'${dataArray[i].id}')">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>`}
+                            }
+
+                        else if (newData.type === 'modified') {
+                            // for(let i=0;i<dataArray.length;i++){
+                            //     console.log(dataArray[i].data().itemPrice)
+                            // }
+                            window.location.reload()
+                            // let indexNumber = -1
+                            // for (let i = 0; i < dataArray.length; i++) {
+                            //     if (dataArray[i].id === docId) {
+                            //         indexNumber = i
+                            //         console.log(dataArray[i].data())
+                            //         break
+                            //     }
+                            // }
+                            // console.log("Index Number", indexNumber)
+
+                            // if (indexNumber != -1) {
+                            //     dataArray[indexNumber] = newData.doc
+                            //     let existingCard = document.getElementById(docId);
+                            //     let cardTitle = existingCard.querySelector('.card-title');
+                            //     let cardPrice = existingCard.querySelector('.card-price');
+                            //     let cardDescription = existingCard.querySelector('.card-text');
+
+                            //     console.log("Modified Index:", indexNumber);
+                            //     console.log("Modified Data:", newData.doc.data());
+
+                            //     cardTitle.innerText = newData.doc.data().itemName;
+                            //     cardPrice.innerText = `${newData.doc.data().itemPrice}`;
+                            //     cardDescription.innerText = newData.doc.data().itemDiscription;
+
+
+                            // else {
+                            //     console.log("Item not found in dataArray for modification:", docId);
+                            // }
+                        }
+
+
+                        else if (newData.type === 'removed') {
+                            window.location.reload()
+                            // for(let i =0;i<dataArray.length;i++){
+                            //     console.log(dataArray[i].data().itemPrice)
+                            // }
+
+                            // let deleted = document.getElementById(docId);
+                            // console.log("Deleted"+deleted)
+                            // deleted.remove();
+
+                            // Remove the item from dataArray
+                            // dataArray = dataArray.filter(item => item.id !== docId);
+
+                            // for (let i = 0; i < dataArray.length; i++) {
+                            //     console.log('Data in Array', dataArray[i].data())
+                            // }
+                        }
+                    });
+                });
+            
+                //    return {copyOfArray}
+            };
+            // sorting work is remaining (will done tommorow)
+
+            //             console.log(getData())
+            getData()
